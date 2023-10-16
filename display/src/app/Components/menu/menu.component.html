@@ -1,0 +1,8 @@
+<div class="slider" tabindex="0">
+  <div class="slide" [style.background-color]="'black'" [style.left]="(i - index) * 100 + '%'" *ngFor="let color of slides; let i = index">
+    <app-model canvasId="{{i}}" modelPath="{{models[i]}}"></app-model>
+  </div>
+</div>
+<div class="pagination">
+  <div class="card" *ngFor="let color of slides; let i = index" (click)="selectSlide(i)" [class.active]="i === index"><div>{{"0"+(i+1)}}</div></div>
+</div>

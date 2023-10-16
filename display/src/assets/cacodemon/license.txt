@@ -1,0 +1,11 @@
+Model Information:
+* title:	DOOM eternal cacodemon toy
+* source:	https://sketchfab.com/3d-models/doom-eternal-cacodemon-toy-cf7e8051eac84844abb8d4d7f9e31f89
+* author:	DJ_Nugget (https://sketchfab.com/DJ_Nugget)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "DOOM eternal cacodemon toy" (https://sketchfab.com/3d-models/doom-eternal-cacodemon-toy-cf7e8051eac84844abb8d4d7f9e31f89) by DJ_Nugget (https://sketchfab.com/DJ_Nugget) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

@@ -1,0 +1,11 @@
+Model Information:
+* title:	DOOM eternal slayer toy
+* source:	https://sketchfab.com/3d-models/doom-eternal-slayer-toy-5f7c26b0e19f4010a2edf43bd670a433
+* author:	DJ_Nugget (https://sketchfab.com/DJ_Nugget)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "DOOM eternal slayer toy" (https://sketchfab.com/3d-models/doom-eternal-slayer-toy-5f7c26b0e19f4010a2edf43bd670a433) by DJ_Nugget (https://sketchfab.com/DJ_Nugget) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

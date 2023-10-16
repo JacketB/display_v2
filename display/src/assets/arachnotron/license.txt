@@ -1,0 +1,11 @@
+Model Information:
+* title:	DOOM eternal arachnotron
+* source:	https://sketchfab.com/3d-models/doom-eternal-arachnotron-4f3c3841f6fe44db891755a095abcaa8
+* author:	DJ_Nugget (https://sketchfab.com/DJ_Nugget)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "DOOM eternal arachnotron" (https://sketchfab.com/3d-models/doom-eternal-arachnotron-4f3c3841f6fe44db891755a095abcaa8) by DJ_Nugget (https://sketchfab.com/DJ_Nugget) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
