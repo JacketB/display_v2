@@ -8,6 +8,7 @@ import { MenuComponent } from './Components/menu/menu.component';
 import {HashLocationStrategy, LocationStrategy, NgOptimizedImage} from '@angular/common';
 import {Routes, RouterModule} from '@angular/router';
 import { ModelComponent } from './Components/menu/Components/model/model.component';
+import {NgxGaugeModule} from "ngx-gauge";
 
 const appRoutes: Routes =[
   {path: '', component: DashboardComponent},
@@ -21,11 +22,12 @@ const appRoutes: Routes =[
     MenuComponent,
     ModelComponent
   ],
-  imports: [
-    BrowserModule,
-    RouterModule.forRoot(appRoutes),
-    NgOptimizedImage,
-  ],
+    imports: [
+        BrowserModule,
+        RouterModule.forRoot(appRoutes),
+        NgOptimizedImage,
+        NgxGaugeModule,
+    ],
   providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
