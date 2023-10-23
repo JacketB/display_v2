@@ -10,7 +10,6 @@ export class Dashboardv2Component implements OnInit{
   speedLabel = "Скорость";
   speedAppendText = "км/ч";
   time = new Date();
-
   speedMarkers = {
     "0": {
       "color": "#ffffff",
@@ -61,24 +60,18 @@ export class Dashboardv2Component implements OnInit{
     "type": "line"
     }
   }
-
   thresholdConfig = {
     '0': {color: 'green'},
     '60': {color: 'orange'},
     '100': {color: 'red'}
   };
-
   socketData: any = {
     bus_speed: 0,
     bus_x: 0,
     bus_y: 0,
     bus_z: 0
   }
-
   webSocket = new WebSocket("ws://localhost:8080/ws");
-
-  oilHeight = 0
-  temperatureHeight = 0
   protected readonly Math = Math;
 
   ngOnInit() {
