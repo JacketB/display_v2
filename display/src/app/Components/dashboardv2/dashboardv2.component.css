@@ -75,5 +75,29 @@
 .metric {
   display: flex;
   align-items: center;
+}
 
+.modern-progress-bar {
+  display: flex;
+}
+
+.modern-bar-container {
+  display: flex;
+  width: 70px;
+  height: 30px;
+
+  margin-left: 10px;
+
+  -webkit-box-shadow: 0 0 5px 2px rgba(0, 143, 253, 0.5);
+  -moz-box-shadow: 0 0 5px 2px rgba(0, 143, 253, 0.5);
+  box-shadow: 0 0 5px 2px rgba(0, 143, 253, 0.5);
+
+  transform: rotateX(10deg) rotateY(20deg);
+  transform-style: preserve-3d;
+}
+
+.modern-bar {
+  position: relative;
+  background: orange;
+  transition: 0.3s;
 }
