@@ -42,14 +42,6 @@
     <app-model modelPath="./assets/bus.gltf" [rotateY]="socketData.bus_y" [width]="400" [height]="300"></app-model>
 
     <div class="metric">
-      <div class="progress-bar">
-        <div class="progress-bar_container">
-          <div class="bar" [ngStyle]="{'height': 30+'%', 'background':30 < 10? 'red': 30 < 40 ? 'yellow' : '#00e035'}"></div>
-        </div>
-        <div>Топливо</div>
-        <div>{{Math.floor(30)}}<span class="text-gray">%</span></div>
-      </div>
-
       <div class="gauge">
         <ngx-gauge
           [min]="0"
@@ -62,23 +54,27 @@
           [thresholds]="thresholdConfig">
         </ngx-gauge>
       </div>
+
+      <div class="modern-progress-bar">
+        <div class="modern-bar-container">
+          <div class="modern-bar" id="progress0"></div>
+        </div>
+        <div class="modern-bar-container">
+          <div class="modern-bar" id="progress1"></div>
+        </div>
+        <div class="modern-bar-container">
+          <div class="modern-bar" id="progress2"></div>
+        </div>
+        <div class="modern-bar-container">
+          <div class="modern-bar" id="progress3"></div>
+        </div>
+      </div>
+
+
     </div>
   </div>
 
-  <div class="modern-progress-bar">
-    <div class="modern-bar-container">
-      <div class="modern-bar" id="progress0"></div>
-    </div>
-    <div class="modern-bar-container">
-      <div class="modern-bar" id="progress1"></div>
-    </div>
-    <div class="modern-bar-container">
-      <div class="modern-bar" id="progress2"></div>
-    </div>
-    <div class="modern-bar-container">
-      <div class="modern-bar" id="progress3"></div>
-    </div>
-  </div>
+
 </div>
 
 

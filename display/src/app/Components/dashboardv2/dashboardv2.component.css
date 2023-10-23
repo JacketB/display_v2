@@ -74,11 +74,13 @@
 
 .metric {
   display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
 .modern-progress-bar {
   display: flex;
+  margin-top: 20px;
 }
 
 .modern-bar-container {
