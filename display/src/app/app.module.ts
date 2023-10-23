@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { MenuComponent } from './Components/menu/menu.component';
@@ -9,9 +8,11 @@ import {HashLocationStrategy, LocationStrategy, NgOptimizedImage} from '@angular
 import {Routes, RouterModule} from '@angular/router';
 import { ModelComponent } from './Components/menu/Components/model/model.component';
 import {NgxGaugeModule} from "ngx-gauge";
+import { Dashboardv2Component } from './Components/dashboardv2/dashboardv2.component';
 
 const appRoutes: Routes =[
-  {path: '', component: DashboardComponent},
+  {path: 'ds', component: DashboardComponent},
+  {path: '', component: Dashboardv2Component},
   {path: 'menu', component: MenuComponent}
 ]
 
@@ -20,7 +21,8 @@ const appRoutes: Routes =[
     AppComponent,
     DashboardComponent,
     MenuComponent,
-    ModelComponent
+    ModelComponent,
+    Dashboardv2Component
   ],
     imports: [
         BrowserModule,

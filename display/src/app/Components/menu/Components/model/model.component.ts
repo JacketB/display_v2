@@ -10,15 +10,19 @@ import {CSS2DRenderer} from "three/examples/jsm/renderers/CSS2DRenderer";
   styleUrls: ['./model.component.css']
 })
 export class ModelComponent implements AfterViewInit {
-  @Input() public modelPath: string = ""
+  @Input() public modelPath: string = "/assets/bus.gltf"
   @Input() public canvasId: string = "0"
+  @Input() public width: number = 800
+  @Input() public height: number = 800
+  @Input() public rotateX: number = 0;
+  @Input() public rotateY: number = 0;
+  @Input() public rotateZ: number = 0;
 
-  public fieldOfView: number = 1.8;
+  public fieldOfView: number = 1;
 
   public nearClippingPane: number = 1;
 
   public farClippingPane: number = 1000;
-
 
   private camera!: THREE.PerspectiveCamera;
 
@@ -27,14 +31,6 @@ export class ModelComponent implements AfterViewInit {
   private renderer!: THREE.WebGLRenderer;
   private controls!: OrbitControls;
   private ambientLight!: THREE.AmbientLight;
-
-  private light1!: THREE.PointLight;
-
-  private light2!: THREE.PointLight;
-
-  private light3!: THREE.PointLight;
-
-  private light4!: THREE.PointLight;
 
   private model: any;
 
@@ -62,14 +58,10 @@ export class ModelComponent implements AfterViewInit {
     this.scene.background = new THREE.Color('#000000')
     this.loader.load(this.modelPath, (gltf: GLTF) => {
       this.model = gltf.scene.children[0];
-      console.log(this.model);
-      var box = new THREE.Box3().setFromObject(this.model);
-      box.getCenter(this.model.position);
-      this.model.position.multiplyScalar(-1);
+
 
       this.scene.add(this.model)
     })
-
     let aspectRatio = this.getAspectRatio();
     this.camera = new THREE.PerspectiveCamera(
       this.fieldOfView,
@@ -77,34 +69,20 @@ export class ModelComponent implements AfterViewInit {
       this.nearClippingPane,
       this.farClippingPane
     )
-    this.camera.position.x = 900;
+    this.camera.position.x = 500;
     this.camera.position.y = 300;
-    this.camera.position.z = 100;
+    this.camera.position.z = -500;
     this.ambientLight = new THREE.AmbientLight(0x00000, 100);
     this.scene.add(this.ambientLight);
     this.directionalLight = new THREE.DirectionalLight(0xffffff, 10);
-    this.directionalLight.position.set(1, 1, 1);
+    this.directionalLight.position.set(10, 1, 1);
     this.directionalLight.castShadow = true;
     this.scene.add(this.directionalLight);
-    this.light1 = new THREE.PointLight(0x4b371c, 10);
-    this.light1.position.set(10, 200, 400);
-    this.scene.add(this.light1);
-    this.light2 = new THREE.PointLight(0x4b371c, 10);
-    this.light2.position.set(500, 100, 0);
-    this.scene.add(this.light2);
-    this.light3 = new THREE.PointLight(0x4b371c, 10);
-    this.light3.position.set(0, 100, -500);
-    this.scene.add(this.light3);
-    this.light4 = new THREE.PointLight(0x4b371c, 10);
-    this.light4.position.set(-500, 300, 500);
-
-
-    this.scene.add(this.light4);
   }
 
   private getAspectRatio() {
     // @ts-ignore
-    return 800 / 800;
+    return this.width / this.height;
   }
 
   private startRenderingLoop() {
@@ -114,7 +92,7 @@ export class ModelComponent implements AfterViewInit {
     this.renderer = new THREE.WebGLRenderer({ canvas: document.getElementById(this.canvasId), antialias: true });
     this.renderer.setPixelRatio(devicePixelRatio);
     // @ts-ignore
-    this.renderer.setSize(700, 700);
+    this.renderer.setSize(this.width, this.height);
     let component: ModelComponent = this;
     (function render() {
       component.renderer.render(component.scene, component.camera);
@@ -124,7 +102,7 @@ export class ModelComponent implements AfterViewInit {
   }
   private animateModel() {
     if (this.model) {
-      this.model.rotation.y += 0.03;
+      this.model.rotation.y += this.rotateY / 10000;
     }
   }
 

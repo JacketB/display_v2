@@ -8,8 +8,6 @@ import {
   iconsSecondLine,
   iconsThirdLine, nineLineSignals, sevenLineSignals, sixLineSignals
 } from "./icons-routes";
-import {NgxGauge} from "ngx-gauge";
-import {NgxGaugeType} from "ngx-gauge/gauge/gauge";
 
 @Component({
   selector: 'app-dashboard',
@@ -23,21 +21,10 @@ export class DashboardComponent {
   public sixLineSignals = sixLineSignals; public sevenLineSignals = sevenLineSignals;
   public eightLineSignals = eightLineSignals; public nineLineSignals = nineLineSignals;
 
-  gaugeValue = 100;
-
   speedLabel = "Скорость";
   speedAppendText = "км/ч";
 
-  barLabel = "Давление"
-  barAppendText = "бар"
-
-  oilLabel = "Топливо"
-  oilAppendText = "%"
-
-  temperatureLabel = "Температура"
-  temperatureAppendText = "°C"
-
-  rpmLabel = "Обороты"
+  rpmLabel = "Обороты x 100"
   rpmAppendText = "об/мин"
 
   speedMarkers = {
@@ -71,78 +58,6 @@ export class DashboardComponent {
       "label": "120",
       "type": "line"
     }
-  }
-  barMarkers = {
-    "0": {
-      "color": "#ffffff",
-      "size": 5,
-      "label": "0",
-      "type": "line"
-    },
-    "5": {
-      "color": "#ffffff",
-      "size": 5,
-      "label": "5",
-      "type": "line"
-    },
-    "10": {
-      "color": "#ffffff",
-      "size": 5,
-      "label": "10",
-      "type": "line"
-    },
-  }
-  oilMarkers = {
-    "0": {
-      "color": "#ffffff",
-      "size": 5,
-      "label": "0",
-      "type": "line"
-    },
-    "25": {
-      "color": "#ffffff",
-      "size": 5,
-      "label": "5",
-      "type": "line"
-    },
-    "50": {
-      "color": "#ffffff",
-      "size": 5,
-      "label": "5",
-      "type": "line"
-    },
-    "75": {
-      "color": "#ffffff",
-      "size": 5,
-      "label": "5",
-      "type": "line"
-    },
-    "100": {
-      "color": "#ffffff",
-      "size": 5,
-      "label": "10",
-      "type": "line"
-    },
-  }
-  temperatureMarkers = {
-    "40": {
-      "color": "#ffffff",
-      "size": 5,
-      "label": "0",
-      "type": "line"
-    },
-    "80": {
-      "color": "#ffffff",
-      "size": 5,
-      "label": "5",
-      "type": "line"
-    },
-    "120": {
-      "color": "#ffffff",
-      "size": 5,
-      "label": "5",
-      "type": "line"
-    },
   }
   rpmMarkers = {
     "0": {
@@ -191,6 +106,21 @@ export class DashboardComponent {
     '20': {color: 'red'}
   }
 
+  oilHeight = 0
+  temperatureHeight = 0
+  rpmValue = 0
+  speedValue = 0
+
+
   constructor() {
+    setInterval(() => {
+      this.oilHeight = Math.random() * 100;
+      this.temperatureHeight = Math.random() * (120 - 40) + 40
+
+      this.rpmValue = Math.random() * 30
+      this.speedValue = Math.random() * 120
+    }, 1000)
   }
+
+  protected readonly Math = Math;
 }

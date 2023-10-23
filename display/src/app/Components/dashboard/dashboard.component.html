@@ -15,26 +15,32 @@
       <div class="left">
         <div class="head-line">
           <ng-container *ngFor="let item of secondLineSignals | slice:0:4">
-            <img src="{{item}}">
+            <img src="{{item}}" alt="Oops!">
           </ng-container>
         </div>
 
         <div class="head-line">
           <ng-container *ngFor="let item of thirdLineSignals | slice:0:3">
-            <img src="{{item}}" alt="">
+            <img src="{{item}}" alt="Oops!">
           </ng-container>
         </div>
 
-        <div>
-          <ngx-gauge [size]="150" [thick]="7" [min]="0" [max]="10" [markers]="barMarkers" [thresholds]="barThresholdConfig" [foregroundColor]="'#00e035'" [backgroundColor]="'#2f2f2f'"
-                     [value]="3" [label]="barLabel" [append]="barAppendText" [cap]="'butt'" [duration]="500" [type]="'semi'">
-          </ngx-gauge>
-        </div>
+        <div class="space-between">
+          <div class="progress-bar">
+            <div class="progress-bar_container">
+              <div class="bar" [ngStyle]="{'height': oilHeight+'%', 'background':oilHeight < 10? 'red': oilHeight < 40 ? 'yellow' : '#00e035'}"></div>
+            </div>
+            <div>Давление 1</div>
+            <div>{{Math.floor(oilHeight)}} <span class="text-gray">бар</span></div>
+          </div>
 
-        <div>
-          <ngx-gauge [size]="150" [thick]="7" [min]="0" [max]="10" [markers]="barMarkers" [thresholds]="barThresholdConfig" [foregroundColor]="'#00e035'" [backgroundColor]="'#2f2f2f'"
-                     [value]="6" [label]="barLabel" [append]="barAppendText" [cap]="'butt'" [duration]="500" [type]="'semi'">
-          </ngx-gauge>
+          <div class="progress-bar">
+            <div class="progress-bar_container">
+              <div class="bar" [ngStyle]="{'height': temperatureHeight-40+'%', 'background':temperatureHeight > 90 ? 'red': '#00e035'}"></div>
+            </div>
+            <div>Давление 2</div>
+            <div>{{Math.floor(temperatureHeight)}} <span class="text-gray">бар</span></div>
+          </div>
         </div>
 
         <div class="head-line">
@@ -52,13 +58,13 @@
 
       <div class="center">
         <div style="display: flex; justify-content: center">
-          <ngx-gauge [size]="200" [thick]="7" [min]="0" [max]="30" [markers]="rpmMarkers" [foregroundColor]="'#00e035'" [backgroundColor]="'#2f2f2f'"
-                     [value]="20" [label]="rpmLabel" [append]="rpmAppendText" [thresholds]="rpmThresholdConfig" [cap]="'butt'" [duration]="500">
+          <ngx-gauge class="ngx-rpm" [size]="200" [thick]="7" [min]="0" [max]="30" [markers]="rpmMarkers" [foregroundColor]="'#00e035'" [backgroundColor]="'#2f2f2f'"
+                     [value]="Math.floor(rpmValue)" [label]="rpmLabel" [append]="rpmAppendText" [thresholds]="rpmThresholdConfig" [cap]="'butt'" [duration]="500">
           </ngx-gauge>
         </div>
         <div>
           <ngx-gauge [size]="300" [thick]="10" [min]="0" [max]="120" [markers]="speedMarkers" [foregroundColor]="'#00b9d0'" [backgroundColor]="'#2f2f2f'"
-                     [value]="gaugeValue" [label]="speedLabel" [append]="speedAppendText" [cap]="'butt'" [duration]="500" >
+                     [value]="Math.floor(speedValue)" [label]="speedLabel" [append]="speedAppendText" [cap]="'butt'" [duration]="500" >
           </ngx-gauge>
         </div>
 
@@ -78,7 +84,7 @@
       <div class="right">
         <div class="head-line">
           <ng-container *ngFor="let item of secondLineSignals | slice:4:8">
-            <img src="{{item}}">
+            <img src="{{item}}" alt="">
           </ng-container>
         </div>
 
@@ -87,21 +93,27 @@
             <img src="{{item}}" alt="">
           </ng-container>
         </div>
-        <div>
-          <ngx-gauge [size]="150" [thick]="7" [min]="40" [max]="120" [markers]="temperatureMarkers" [thresholds]="temperatureThresholdConfig" [foregroundColor]="'#00e035'" [backgroundColor]="'#2f2f2f'"
-                     [value]="100" [label]="temperatureLabel" [append]="temperatureAppendText" [cap]="'butt'" [duration]="500" [type]="'semi'">
-          </ngx-gauge>
-        </div>
+        <div class="space-between">
+          <div class="progress-bar">
+            <div class="progress-bar_container">
+              <div class="bar" [ngStyle]="{'height': oilHeight+'%', 'background':oilHeight < 10? 'red': oilHeight < 40 ? 'yellow' : '#00e035'}"></div>
+            </div>
+            <div>Топливо</div>
+            <div>{{Math.floor(oilHeight)}}<span class="text-gray">%</span></div>
+          </div>
 
-        <div>
-          <ngx-gauge [size]="150" [thick]="7" [min]="0" [max]="100" [markers]="oilMarkers" [foregroundColor]="'#00e035'" [backgroundColor]="'#2f2f2f'"
-                     [value]="24" [label]="oilLabel" [thresholds]="oilThresholdConfig" [append]="oilAppendText" [cap]="'butt'" [duration]="500" [type]="'semi'">
-          </ngx-gauge>
+          <div class="progress-bar">
+            <div class="progress-bar_container">
+              <div class="bar" [ngStyle]="{'height': temperatureHeight-40+'%', 'background':temperatureHeight > 90 ? 'red': '#00e035'}"></div>
+            </div>
+            <div>Температура</div>
+            <div>{{Math.floor(temperatureHeight)}}<span class="text-gray">°C</span></div>
+          </div>
         </div>
 
         <div class="head-line">
           <ng-container *ngFor="let item of fiveLineSignals">
-            <img src="{{item}}">
+            <img src="{{item}}" alt="">
           </ng-container>
         </div>
 
@@ -113,6 +125,7 @@
       </div>
     </div>
   </div>
+
 
 
 
