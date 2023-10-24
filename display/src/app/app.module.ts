@@ -9,6 +9,7 @@ import {Routes, RouterModule} from '@angular/router';
 import { ModelComponent } from './Components/menu/Components/model/model.component';
 import {NgxGaugeModule} from "ngx-gauge";
 import { Dashboardv2Component } from './Components/dashboardv2/dashboardv2.component';
+import { ModernProgressBarComponent } from './Components/dashboardv2/Components/modern-progress-bar/modern-progress-bar.component';
 
 const appRoutes: Routes =[
   {path: 'ds', component: DashboardComponent},
@@ -22,7 +23,8 @@ const appRoutes: Routes =[
     DashboardComponent,
     MenuComponent,
     ModelComponent,
-    Dashboardv2Component
+    Dashboardv2Component,
+    ModernProgressBarComponent
   ],
     imports: [
         BrowserModule,

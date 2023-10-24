@@ -91,8 +91,6 @@ export class Dashboardv2Component implements OnInit{
 
     setInterval(() => {
       this.time = new Date();
-      var data = Math.random()*100;
-      this.test(data)
     }, 1000);
 
   }
@@ -101,27 +99,7 @@ export class Dashboardv2Component implements OnInit{
 
   }
 
-  test(data: number) {
-    var progresses = (4 * data) / 100;
-    var fullProgresses = Math.floor(progresses);
-    var remainder = Math.floor((progresses - fullProgresses) * 100);
 
-    let progressesArray = [0,0,0,0];
-    let lastCount = 0;
-    for(let i = 0; i < fullProgresses; i++) {
-      progressesArray[i] = 100
-      lastCount++;
-    }
-
-    progressesArray[lastCount]=remainder;
-    if(progressesArray.length !== 4) {
-      progressesArray.push(0);
-    }
-
-    for(let i = 0; i < progressesArray.length; i++) {
-      document.getElementById('progress'+i)!.style.width = progressesArray[i]+"%";
-    }
-  }
 
   protected readonly iconsFirstLine = iconsFirstLine;
 }

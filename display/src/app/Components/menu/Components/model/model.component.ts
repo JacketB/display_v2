@@ -2,7 +2,7 @@ import {AfterViewInit, Component, Input} from '@angular/core';
 import * as THREE from "three";
 import {GLTF, GLTFLoader} from "three/examples/jsm/loaders/GLTFLoader";
 import {OrbitControls} from "three/examples/jsm/controls/OrbitControls";
-import {CSS2DRenderer} from "three/examples/jsm/renderers/CSS2DRenderer";
+import {WebGLRenderer} from "three";
 
 @Component({
   selector: 'app-model',
@@ -30,18 +30,14 @@ export class ModelComponent implements AfterViewInit {
   private scene!: THREE.Scene;
   private renderer!: THREE.WebGLRenderer;
   private controls!: OrbitControls;
-  private ambientLight!: THREE.AmbientLight;
-
   private model: any;
-
-  private directionalLight!: THREE.DirectionalLight;
   constructor() {
 
   }
 
   private createControls = () => {
-    const renderer = new CSS2DRenderer();
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    const renderer = new WebGLRenderer({ antialias: true });
+    renderer.setSize(this.width, this.height);
     renderer.domElement.style.position = 'absolute';
     renderer.domElement.style.top = '0px';
     document.body.appendChild(renderer.domElement);
@@ -55,34 +51,17 @@ export class ModelComponent implements AfterViewInit {
 
   private createScene() {
     this.scene = new THREE.Scene();
-    this.scene.background = new THREE.Color('#000000')
+    this.scene.background = new THREE.Color('#00b7ff')
     this.loader.load(this.modelPath, (gltf: GLTF) => {
       this.model = gltf.scene.children[0];
-
-
       this.scene.add(this.model)
     })
-    let aspectRatio = this.getAspectRatio();
     this.camera = new THREE.PerspectiveCamera(
       this.fieldOfView,
-      aspectRatio,
-      this.nearClippingPane,
-      this.farClippingPane
     )
-    this.camera.position.x = 500;
-    this.camera.position.y = 300;
-    this.camera.position.z = -500;
-    this.ambientLight = new THREE.AmbientLight(0x00000, 100);
-    this.scene.add(this.ambientLight);
-    this.directionalLight = new THREE.DirectionalLight(0xffffff, 10);
-    this.directionalLight.position.set(10, 1, 1);
-    this.directionalLight.castShadow = true;
-    this.scene.add(this.directionalLight);
-  }
-
-  private getAspectRatio() {
-    // @ts-ignore
-    return this.width / this.height;
+    this.camera.position.x = 0;
+    this.camera.position.y = 60;
+    this.camera.position.z = -300;
   }
 
   private startRenderingLoop() {

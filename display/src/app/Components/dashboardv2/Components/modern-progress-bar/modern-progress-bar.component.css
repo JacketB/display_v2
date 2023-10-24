@@ -1,0 +1,22 @@
+.modern-progress-bar {
+  display: flex;
+  margin-top: 20px;
+}
+
+.modern-bar-container {
+  display: flex;
+  width: 50px;
+  height: 10px;
+
+  margin-left: 10px;
+
+  -webkit-box-shadow: 0 0 5px 2px rgba(29, 227, 236, 1);
+  -moz-box-shadow: 0 0 5px 2px rgba(29, 227, 236, 1);
+  box-shadow: 0 0 5px 2px rgba(29, 227, 236, 1);
+}
+
+.modern-bar {
+  position: relative;
+  background: rgba(29, 227, 236, 1);
+  transition: 0.1s;
+}
