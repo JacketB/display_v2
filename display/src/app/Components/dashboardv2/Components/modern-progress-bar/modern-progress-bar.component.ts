@@ -7,8 +7,11 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class ModernProgressBarComponent implements OnInit {
   @Input() public id: string = "";
+  @Input() public title: string = "";
+  @Input() public append: string = "";
 
   public ids: string[] = []
+  public data = 0;
 
   test(data: number) {
     var progresses = (4 * data) / 100;
@@ -35,8 +38,10 @@ export class ModernProgressBarComponent implements OnInit {
   ngOnInit() {
     this.ids =[this.id+"progress0", this.id+"progress1", this.id+"progress2", this.id+"progress3"];
     setInterval(() => {
-      var data = Math.random()*100;
-      this.test(data)
+      this.data = Math.random()*100;
+      this.test(this.data)
     }, 1000)
   }
+
+  protected readonly Math = Math;
 }

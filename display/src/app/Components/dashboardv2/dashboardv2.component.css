@@ -10,7 +10,7 @@
 .dashboard {
   display: flex;
   justify-content: space-around;
-  padding: 10% 3%;
+  padding: 0 3%;
 }
 
 .header {

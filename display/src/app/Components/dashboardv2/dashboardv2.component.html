@@ -15,6 +15,12 @@
     </div>
   </div>
 
+  <div style="display: flex; justify-content: space-around; margin-bottom: 20px">
+    <ng-container *ngFor="let item of iconsHeadLine">
+      <img style="margin-top: 10px" src="{{item}}" alt="">
+    </ng-container>
+  </div>
+
   <div class="dashboard">
     <div class="metric">
       <div class="gauge">
@@ -30,7 +36,7 @@
         </ngx-gauge>
       </div>
 
-      <app-modern-progress-bar [id]="'fuel'"></app-modern-progress-bar>
+      <app-modern-progress-bar [id]="'fuel'" [title]="'температура'" [append]="'°С'"></app-modern-progress-bar>
     </div>
 
     <app-model modelPath="./assets/bus.gltf" [rotateY]="socketData.bus_y" [width]="400" [height]="300"></app-model>
@@ -49,11 +55,9 @@
         </ngx-gauge>
       </div>
 
-      <app-modern-progress-bar [id]="'fuel1'"></app-modern-progress-bar>
+      <app-modern-progress-bar [id]="'fuel1'" [title]="'топливо'" [append]="'%'"></app-modern-progress-bar>
     </div>
   </div>
-
-
 </div>
 
 

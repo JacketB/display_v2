@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import * as msgpack from '@msgpack/msgpack';
-import {iconsFirstLine} from "../dashboard/icons-routes";
+import {iconsFirstLine, iconsHeadLine} from "../dashboard/icons-routes";
 @Component({
   selector: 'app-dashboardv2',
   templateUrl: './dashboardv2.component.html',
@@ -102,4 +102,5 @@ export class Dashboardv2Component implements OnInit{
 
 
   protected readonly iconsFirstLine = iconsFirstLine;
+  protected readonly iconsHeadLine = iconsHeadLine;
 }

@@ -20,10 +20,6 @@ export class ModelComponent implements AfterViewInit {
 
   public fieldOfView: number = 1;
 
-  public nearClippingPane: number = 1;
-
-  public farClippingPane: number = 1000;
-
   private camera!: THREE.PerspectiveCamera;
 
   private loader = new GLTFLoader();
@@ -65,8 +61,6 @@ export class ModelComponent implements AfterViewInit {
   }
 
   private startRenderingLoop() {
-    //* Renderer
-    // Use canvas element in template
     // @ts-ignore
     this.renderer = new THREE.WebGLRenderer({ canvas: document.getElementById(this.canvasId), antialias: true });
     this.renderer.setPixelRatio(devicePixelRatio);
