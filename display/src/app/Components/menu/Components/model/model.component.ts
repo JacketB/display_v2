@@ -24,10 +24,6 @@ export class ModelComponent implements AfterViewInit {
 
   private light2!: THREE.PointLight;
 
-  private light3!: THREE.PointLight;
-
-  private light4!: THREE.PointLight;
-
   public fieldOfView: number = 1;
 
   private camera!: THREE.PerspectiveCamera;
@@ -57,7 +53,7 @@ export class ModelComponent implements AfterViewInit {
 
   private createScene() {
     this.scene = new THREE.Scene();
-    this.scene.background = new THREE.Color('#00b7ff')
+    this.scene.background = new THREE.Color('#000000')
     this.loader.load(this.modelPath, (gltf: GLTF) => {
       this.model = gltf.scene.children[0];
       this.scene.add(this.model)
@@ -75,18 +71,12 @@ export class ModelComponent implements AfterViewInit {
     this.directionalLight.position.set(1, 1, 1);
     this.directionalLight.castShadow = true;
     this.scene.add(this.directionalLight);
-    this.light1 = new THREE.PointLight(0x4b371c, 10);
-    this.light1.position.set(10, 200, 400);
+    this.light1 = new THREE.PointLight(0xffffff, 500);
+    this.light1.position.set(10, 0, -10);
     this.scene.add(this.light1);
-    this.light2 = new THREE.PointLight(0x4b371c, 10);
-    this.light2.position.set(500, 100, 0);
+    this.light2 = new THREE.PointLight(0xffffff, 500);
+    this.light2.position.set(-10, 0, -10);
     this.scene.add(this.light2);
-    this.light3 = new THREE.PointLight(0x4b371c, 10);
-    this.light3.position.set(0, 100, -500);
-    this.scene.add(this.light3);
-    this.light4 = new THREE.PointLight(0x4b371c, 10);
-    this.light4.position.set(-500, 300, 500);
-    this.scene.add(this.light4);
   }
 
   private startRenderingLoop() {

@@ -16,46 +16,52 @@ export const iconsFirstLine = [
   './assets/ico/mirror_heat.png', './assets/ico/window_heat.png',
 ]
 
-export const iconsSecondLine = [
+export const iconsSecondLeft = [
   './assets/ico/engine_fail.png', './assets/ico/oil_pressure.png',
-  './assets/ico/oil_lvl_max.png', './assets/ico/combus_preheat.png',
-
+  './assets/ico/oil_lvl_max.png', './assets/ico/combus_preheat.png'
+]
+export const iconsSecondRight = [
   './assets/ico/side_light.png', './assets/ico/fog_front.png',
-  './assets/ico/fog_rear.png', './assets/ico/bulb_failure.png',
+  './assets/ico/fog_rear.png', './assets/ico/bulb_failure.png'
 ]
 
-export const iconsThirdLine = [
+export const iconsThirdLeft = [
   './assets/ico/eng_inlet_air_filter.png', './assets/ico/engine_coolant_lvl.png', './assets/ico/steering_fluid_lvl.png',
+]
+
+export const iconsThirdRight = [
   './assets/ico/int_illum_1.png', './assets/ico/vent_fan_1.png', './assets/ico/cab_fan.png',
 ]
 
-export const fourLightSignals = [
-  './assets/ico/eng_emiss_system_fail.png', './assets/ico/adblue.png',
-  './assets/ico/baby_pram.png', './assets/ico/baby_pram.png'
+export const iconsFourLeft = [
+  './assets/ico/eng_emiss_system_fail.png', './assets/ico/adblue.png', './assets/ico/cruise_ctrl.png'
+]
+export const iconsFourRight = [
+  './assets/ico/tachograph.png', './assets/ico/baby_pram.png', './assets/ico/baby_pram.png'
 ]
 
-export const fiveLineSignals = [
+export const iconsFiveLeft = [
   './assets/ico/wheelchair.png', './assets/ico/immobile.png',
+]
+
+export const iconsFiveRight = [
   './assets/ico/hill_holding.png', './assets/ico/retarder_off.png'
 ]
-
-export const sixLineSignals = [
-  './assets/ico/hydraulic_drive.png',
-  './assets/ico/emergency_hammer.png', './assets/ico/extinguisher.png'
-]
+export const iconsSixLeft = ['./assets/ico/hydraulic_drive.png',   './assets/ico/battery.png',]
+export const iconsSixRight = ['./assets/ico/emergency_hammer.png', './assets/ico/extinguisher.png']
 
 export const sevenLineSignals = [
   './assets/ico/tyre_fail.png', './assets/ico/return_driver.png'
 ]
 
-export const eightLineSignals = [
+export const iconsEightLeft = [
   './assets/ico/pneumo_1.png', './assets/ico/susp_down.png', './assets/ico/susp_dm.png',
+]
 
+export const iconsEightRight = [
   './assets/ico/transmission_failure.png', './assets/ico/transmission_temperature.png',
 
   './assets/ico/transmission_convert_temperature.png',
-
-  './assets/ico/battery.png'
 ]
 
 export const nineLineSignals = [

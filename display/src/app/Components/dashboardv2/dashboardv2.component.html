@@ -1,64 +1,288 @@
 <div class="panel">
-  <div class="header">
-    <div class="icons-header">
-      <ng-container *ngFor="let item of iconsFirstLine | slice:0:iconsFirstLine.length / 2">
-        <img style="margin-top: 10px" src="{{item}}" alt="">
-      </ng-container>
-    </div>
-
-    <div class="time">{{time | date:'hh:mm'}}</div>
-
-    <div class="icons-header">
-      <ng-container *ngFor="let item of iconsFirstLine | slice:iconsFirstLine.length / 2:iconsFirstLine.length">
-        <img style="margin-top: 10px" src="{{item}}" alt="">
-      </ng-container>
-    </div>
-  </div>
-
-  <div style="display: flex; justify-content: space-around; margin-bottom: 20px">
+  <div class="time">{{time | date:'hh:mm'}}</div>
+  <div class="icons-line icons-group">
     <ng-container *ngFor="let item of iconsHeadLine">
-      <img style="margin-top: 10px" src="{{item}}" alt="">
+      <img src="{{item}}" alt="">
     </ng-container>
   </div>
 
-  <div class="dashboard">
-    <div class="metric">
-      <div class="gauge">
-        <ngx-gauge
-          [min]="0"
-          [max]="140"
-          [size]="200"
-          [markers]="speedMarkers"
-          [value]="socketData.bus_speed"
-          [label]="speedLabel"
-          [append]="speedAppendText"
-          [thresholds]="thresholdConfig">
-        </ngx-gauge>
-      </div>
+  <div class="icons-line icons-group">
+    <ng-container *ngFor="let item of iconsFirstLine">
+      <img src="{{item}}" alt="">
+    </ng-container>
+  </div>
 
-      <app-modern-progress-bar [id]="'fuel'" [title]="'температура'" [append]="'°С'"></app-modern-progress-bar>
+  <div class="metric">
+    <div class="icons">
+      <div>
+        <div class="icons-group">
+          <ng-container *ngFor="let item of iconsSecondLeft">
+            <div><img src="{{item}}" alt=""></div>
+          </ng-container>
+        </div>
+
+        <div class="icons-group">
+          <ng-container *ngFor="let item of iconsThirdLeft">
+            <div><img src="{{item}}" alt=""></div>
+          </ng-container>
+        </div>
+
+        <div class="icons-group">
+          <ng-container *ngFor="let item of nineLineSignals">
+            <div><img src="{{item}}" alt=""></div>
+          </ng-container>
+        </div>
+      </div>
+      <div>
+        <div class="icons-group">
+          <ng-container *ngFor="let item of iconsFourLeft">
+            <div><img src="{{item}}" alt=""></div>
+          </ng-container>
+        </div>
+
+        <div class="icons-group">
+          <ng-container *ngFor="let item of iconsFiveLeft">
+            <div><img src="{{item}}" alt=""></div>
+          </ng-container>
+        </div>
+
+        <div class="icons-group">
+          <ng-container *ngFor="let item of iconsSixLeft">
+            <div><img src="{{item}}" alt=""></div>
+          </ng-container>
+        </div>
+
+        <div class="icons-group">
+          <ng-container *ngFor="let item of iconsEightLeft">
+            <div><img src="{{item}}" alt=""></div>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+    <div class="additional_metric">
+      <ngx-gauge
+        [min]="0"
+        [max]="140"
+        [size]="180"
+        [value]="socketData.bus_speed"
+        [markers]="speedMarkers"
+        [thresholds]="thresholdConfig"
+        [label]="'Давление 1'"
+        [backgroundColor]="'gray'"
+      >
+      </ngx-gauge>
+      <ngx-gauge
+        [min]="0"
+        [max]="140"
+        [size]="180"
+        [value]="socketData.bus_speed"
+        [markers]="speedMarkers"
+        [thresholds]="thresholdConfig"
+        [label]="'Давление 2'"
+        [backgroundColor]="'gray'"
+      >
+      </ngx-gauge>
     </div>
 
-   <app-model modelPath="./assets/bus.gltf" [rotateY]="socketData.bus_y" [width]="400" [height]="300"></app-model>
-
-    <div class="metric">
-      <div class="gauge">
+    <div class="speedometer">
+      <div class="speedometer-container">
         <ngx-gauge
           [min]="0"
           [max]="140"
-          [size]="200"
-          [markers]="speedMarkers"
+          [size]="500"
           [value]="socketData.bus_speed"
-          [label]="speedLabel"
-          [append]="speedAppendText"
-          [thresholds]="thresholdConfig">
+          [markers]="speedMarkers"
+          [thresholds]="thresholdConfig"
+          [backgroundColor]="'gray'">
         </ngx-gauge>
+        <div class="model">
+          <app-model modelPath="./assets/bus.gltf" [rotateY]="socketData.bus_y" [width]="300" [height]="300"></app-model>
+        </div>
       </div>
+      <div class="speed-value">
+        {{socketData.bus_speed}} км/ч
+      </div>
+      <div class="speed_0">
+        <span>0</span>
+      </div>
+      <div class="speed_20">
+        <span>20</span>
+      </div>
+      <div class="speed_40">
+        <span>40</span>
+      </div>
+      <div class="speed_60">
+        <span>60</span>
+      </div>
+      <div class="speed_80">
+        <span>80</span>
+      </div>
+      <div class="speed_100">
+        <span>100</span>
+      </div>
+      <div class="speed_120">
+        <span>120</span>
+      </div>
+      <div class="speed_140">
+        <span>140</span>
+      </div>
+    </div>
 
-      <app-modern-progress-bar [id]="'fuel1'" [title]="'топливо'" [append]="'%'"></app-modern-progress-bar>
+    <div class="additional_metric">
+      <ngx-gauge
+        [min]="0"
+        [max]="140"
+        [size]="180"
+        [value]="socketData.bus_speed"
+        [markers]="speedMarkers"
+        [thresholds]="thresholdConfig"
+        [label]="'Температура'"
+        [backgroundColor]="'gray'"
+      >
+      </ngx-gauge>
+      <ngx-gauge
+        [min]="0"
+        [max]="140"
+        [size]="180"
+        [value]="socketData.bus_speed"
+        [markers]="speedMarkers"
+        [thresholds]="thresholdConfig"
+        [label]="'Обороты'"
+        [backgroundColor]="'gray'"
+      >
+      </ngx-gauge>
+      <ngx-gauge
+        [min]="0"
+        [max]="140"
+        [size]="180"
+        [value]="socketData.bus_speed"
+        [markers]="speedMarkers"
+        [thresholds]="thresholdConfig"
+        [label]="'ЭЛЕКТРИЧЕСТВО'"
+        [backgroundColor]="'gray'"
+      >
+      </ngx-gauge>
+    </div>
+    <div class="icons">
+      <div>
+        <div class="icons-group">
+          <ng-container *ngFor="let item of iconsFourRight">
+            <div><img src="{{item}}" alt=""></div>
+          </ng-container>
+        </div>
+
+        <div class="icons-group">
+          <ng-container *ngFor="let item of iconsFiveRight">
+            <div><img src="{{item}}" alt=""></div>
+          </ng-container>
+        </div>
+
+        <div class="icons-group">
+          <ng-container *ngFor="let item of iconsSixRight">
+            <div><img src="{{item}}" alt=""></div>
+          </ng-container>
+        </div>
+
+        <div class="icons-group">
+          <ng-container *ngFor="let item of iconsEightRight">
+            <div><img src="{{item}}" alt=""></div>
+          </ng-container>
+        </div>
+      </div>
+      <div>
+        <div class="icons-group">
+          <ng-container *ngFor="let item of iconsSecondRight">
+            <div><img src="{{item}}" alt=""></div>
+          </ng-container>
+        </div>
+
+        <div class="icons-group">
+          <ng-container *ngFor="let item of iconsThirdRight">
+            <div><img src="{{item}}" alt=""></div>
+          </ng-container>
+        </div>
+
+        <div class="icons-group">
+          <ng-container *ngFor="let item of sevenLineSignals">
+            <div><img src="{{item}}" alt=""></div>
+          </ng-container>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
+<div class="panel">
+  <div class="metric">
+    <div class="speedometer">
+      <div class="speedometer-container">
+        <ngx-gauge
+          [min]="0"
+          [max]="140"
+          [size]="500"
+          [value]="socketData.bus_speed"
+          [markers]="speedMarkers"
+          [thresholds]="thresholdConfig"
+          [backgroundColor]="'gray'">
+        </ngx-gauge>
+        <div class="model">
+          <app-model modelPath="./assets/bus.gltf" [rotateY]="socketData.bus_y" [width]="300" [height]="300" [canvasId]="'12'"></app-model>
+        </div>
+      </div>
+      <div class="speed-value">
+        {{socketData.bus_speed}} км/ч
+      </div>
+      <div class="speed_0">
+        <span>0</span>
+      </div>
+      <div class="speed_20">
+        <span>20</span>
+      </div>
+      <div class="speed_40">
+        <span>40</span>
+      </div>
+      <div class="speed_60">
+        <span>60</span>
+      </div>
+      <div class="speed_80">
+        <span>80</span>
+      </div>
+      <div class="speed_100">
+        <span>100</span>
+      </div>
+      <div class="speed_120">
+        <span>120</span>
+      </div>
+      <div class="speed_140">
+        <span>140</span>
+      </div>
+    </div>
+  </div>
+  <div style="display: flex; justify-content: space-around">
+    <ngx-gauge
+      [min]="0"
+      [max]="140"
+      [size]="200"
+      [value]="socketData.bus_speed"
+      [markers]="speedMarkers"
+      [thresholds]="thresholdConfig"
+      [backgroundColor]="'gray'">
+    </ngx-gauge>
 
+    <div>
+      <app-modern-progress-bar></app-modern-progress-bar>
+      <app-modern-progress-bar></app-modern-progress-bar>
+    </div>
+
+    <ngx-gauge
+      [min]="0"
+      [max]="140"
+      [size]="200"
+      [value]="socketData.bus_speed"
+      [markers]="speedMarkers"
+      [thresholds]="thresholdConfig"
+      [backgroundColor]="'gray'">
+    </ngx-gauge>
+  </div>
+</div>
 

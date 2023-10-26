@@ -1,6 +1,13 @@
 import {Component, OnInit} from '@angular/core';
 import * as msgpack from '@msgpack/msgpack';
-import {iconsFirstLine, iconsHeadLine} from "../dashboard/icons-routes";
+import {
+  iconsEightLeft, iconsEightRight,
+  iconsFirstLine, iconsFiveLeft, iconsFiveRight, iconsFourLeft, iconsFourRight,
+  iconsHeadLine,
+  iconsSecondLeft,
+  iconsSecondRight, iconsSixLeft, iconsSixRight,
+  iconsThirdLeft, iconsThirdRight, nineLineSignals, sevenLineSignals
+} from "../dashboard/icons-routes";
 @Component({
   selector: 'app-dashboardv2',
   templateUrl: './dashboardv2.component.html',
@@ -99,8 +106,20 @@ export class Dashboardv2Component implements OnInit{
 
   }
 
-
-
   protected readonly iconsFirstLine = iconsFirstLine;
   protected readonly iconsHeadLine = iconsHeadLine;
+  protected readonly iconsSecondLeft = iconsSecondLeft;
+  protected readonly iconsSecondRight = iconsSecondRight;
+  protected readonly iconsThirdLeft = iconsThirdLeft;
+  protected readonly iconsThirdRight = iconsThirdRight;
+  protected readonly iconsFourRight = iconsFourRight;
+  protected readonly iconsFourLeft = iconsFourLeft;
+  protected readonly iconsFiveRight = iconsFiveRight;
+  protected readonly iconsFiveLeft = iconsFiveLeft;
+  protected readonly iconsSixLeft = iconsSixLeft;
+  protected readonly iconsSixRight = iconsSixRight;
+  protected readonly sevenLineSignals = sevenLineSignals;
+  protected readonly nineLineSignals = nineLineSignals;
+  protected readonly iconsEightLeft = iconsEightLeft;
+  protected readonly iconsEightRight = iconsEightRight;
 }

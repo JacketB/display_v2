@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {
+/*import {
   eightLineSignals,
   fiveLineSignals,
   fourLightSignals,
@@ -7,7 +7,7 @@ import {
   iconsHeadLine,
   iconsSecondLine,
   iconsThirdLine, nineLineSignals, sevenLineSignals, sixLineSignals
-} from "./icons-routes";
+} from "./icons-routes";*/
 
 @Component({
   selector: 'app-dashboard',
@@ -15,11 +15,11 @@ import {
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent {
-  public headLineSignals = iconsHeadLine;  public firstLineSignals = iconsFirstLine;
+/*  public headLineSignals = iconsHeadLine;  public firstLineSignals = iconsFirstLine;
   public secondLineSignals = iconsSecondLine; public thirdLineSignals = iconsThirdLine;
   public fourLineSignals = fourLightSignals; public fiveLineSignals = fiveLineSignals;
   public sixLineSignals = sixLineSignals; public sevenLineSignals = sevenLineSignals;
-  public eightLineSignals = eightLineSignals; public nineLineSignals = nineLineSignals;
+  public eightLineSignals = eightLineSignals; public nineLineSignals = nineLineSignals;*/
 
   speedLabel = "Скорость";
   speedAppendText = "км/ч";

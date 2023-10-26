@@ -6,6 +6,7 @@
 
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 .dashboard {
   display: flex;
@@ -24,17 +25,21 @@
   justify-content: space-around;
 }
 
+.icons {
+  display: flex;
+}
+
 .time {
   font-size: 32px;
-  background: #000;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-
+  background: rgba(0, 142, 251, 0.2);
+  border-radius: 10px;
   height: 40px;
-
-  -webkit-box-shadow: 0 18px 20px 4px rgba(0, 142, 251, 0.2);
-  -moz-box-shadow: 0 18px 20px 4px rgba(0, 142, 251, 0.2);
-  box-shadow: 0 18px 20px 4px rgba(0, 142, 251, 0.2);
+  max-width: 100px;
+  text-align: center;
+  margin: 0 auto;
+  -webkit-box-shadow: 0 3px 24px 15px rgba(0, 142, 251, 0.2);
+  -moz-box-shadow: 0 3px 24px 15px rgba(0, 142, 251, 0.2);
+  box-shadow: 0 3px 24px 15px rgba(0, 142, 251, 0.2);
 
   padding: 0 10px;
 }
@@ -71,9 +76,95 @@
   transition: 0.3s;
 }
 
-
 .metric {
   display: flex;
+  justify-content: space-around;
+}
+
+.metric img {
+  height: 40px;
+}
+
+.additional_metric {
+  display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
+}
+
+.speedometer-container, .speedometer {
+  padding-top: 30px;
+  max-width: 500px;
+  max-height: 500px;
+}
+
+.icons-line {
+  display: flex;
+  justify-content: space-around;
+  margin: 5px 20px !important;
+}
+
+.icons-group {
+  margin: 5px;
+  padding: 5px;
+}
+
+.model {
+  position: relative;
+  top: -350px;
+  left: 100px;
+}
+
+.speed_0, .speed_20, .speed_40, .speed_60, .speed_80, .speed_100, .speed_120, .speed_140, .speed-value {
+  max-width: 40px;
+  text-align: center;
+  position: relative;
+  font-size: 20px;
+}
+
+.speed_0 {
+  top: -140px;
+  left: -10px
+}
+
+.speed_20 {
+  top: -318px;
+  left: -51px;
+}
+
+.speed_40 {
+  top: -495px;
+  left: -1px;
+}
+
+.speed_60 {
+  top: -615px;
+  left: 148px;
+}
+
+.speed_80 {
+  top: -638px;
+  left: 310px;
+}
+
+.speed_100 {
+  top: -563px;
+  left: 455px;
+}
+
+.speed_120 {
+  top: -434px;
+  left: 505px;
+}
+
+.speed_140 {
+  top: -300px;
+  left: 453px;
+}
+
+.speed-value {
+  border-bottom: 1px solid #afafaf;
+  font-size: 30px;
+  max-width: 120px;
+  top: -420px;
+  left: 200px
 }
