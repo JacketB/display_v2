@@ -1,5 +1,5 @@
 <div class="panel">
-  <div class="time">{{time | date:'hh:mm'}}</div>
+  <div class="time">{{time | date:'HH:mm'}}</div>
   <div class="icons-line icons-group">
     <ng-container *ngFor="let item of iconsHeadLine">
       <img src="{{item}}" alt="">
@@ -209,80 +209,6 @@
         </div>
       </div>
     </div>
-  </div>
-</div>
-
-<div class="panel">
-  <div class="metric">
-    <div class="speedometer">
-      <div class="speedometer-container">
-        <ngx-gauge
-          [min]="0"
-          [max]="140"
-          [size]="500"
-          [value]="socketData.bus_speed"
-          [markers]="speedMarkers"
-          [thresholds]="thresholdConfig"
-          [backgroundColor]="'gray'">
-        </ngx-gauge>
-        <div class="model">
-          <app-model modelPath="./assets/bus.gltf" [rotateY]="socketData.bus_y" [width]="300" [height]="300" [canvasId]="'12'"></app-model>
-        </div>
-      </div>
-      <div class="speed-value">
-        {{socketData.bus_speed}} км/ч
-      </div>
-      <div class="speed_0">
-        <span>0</span>
-      </div>
-      <div class="speed_20">
-        <span>20</span>
-      </div>
-      <div class="speed_40">
-        <span>40</span>
-      </div>
-      <div class="speed_60">
-        <span>60</span>
-      </div>
-      <div class="speed_80">
-        <span>80</span>
-      </div>
-      <div class="speed_100">
-        <span>100</span>
-      </div>
-      <div class="speed_120">
-        <span>120</span>
-      </div>
-      <div class="speed_140">
-        <span>140</span>
-      </div>
-    </div>
-  </div>
-  <div style="display: flex; justify-content: space-around">
-    <ngx-gauge
-      [min]="0"
-      [max]="140"
-      [size]="200"
-      [value]="socketData.bus_speed"
-      [markers]="speedMarkers"
-      [thresholds]="thresholdConfig"
-      [backgroundColor]="'gray'">
-    </ngx-gauge>
-
-    <div>
-      <app-modern-progress-bar></app-modern-progress-bar>
-      <app-modern-progress-bar></app-modern-progress-bar>
-    </div>
-
-    <ngx-gauge
-      [min]="0"
-      [max]="140"
-      [size]="200"
-      [value]="socketData.bus_speed"
-      [markers]="speedMarkers"
-      [thresholds]="thresholdConfig"
-      [backgroundColor]="'gray'">
-    </ngx-gauge>
   </div>
 </div>
 

@@ -11,15 +11,15 @@ export class ModernProgressBarComponent implements OnInit {
   @Input() public append: string = "";
 
   public ids: string[] = []
-  public data = 0;
+  public data: number = 0;
 
   test(data: number) {
-    var progresses = (4 * data) / 100;
-    var fullProgresses = Math.floor(progresses);
-    var remainder = Math.floor((progresses - fullProgresses) * 100);
+    var progresses: number = (4 * data) / 100;
+    var fullProgresses: number = Math.floor(progresses);
+    var remainder: number = Math.floor((progresses - fullProgresses) * 100);
 
     let progressesArray = [0,0,0,0];
-    let lastCount = 0;
+    let lastCount: number = 0;
     for(let i = 0; i < fullProgresses; i++) {
       progressesArray[i] = 100
       lastCount++;

@@ -10,10 +10,10 @@ import {WebGLRenderer} from "three";
   styleUrls: ['./model.component.css']
 })
 export class ModelComponent implements AfterViewInit {
-  @Input() public modelPath: string = "/assets/bus/bus.gltf"
-  @Input() public canvasId: string = "0"
-  @Input() public width: number = 800
-  @Input() public height: number = 800
+  @Input() public modelPath: string = "/assets/bus/bus.gltf";
+  @Input() public canvasId: string = "0";
+  @Input() public width: number = 800;
+  @Input() public height: number = 800;
   @Input() public rotateX: number = 0;
   @Input() public rotateY: number = 0;
   @Input() public rotateZ: number = 0;
