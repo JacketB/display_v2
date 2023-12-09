@@ -10,34 +10,15 @@ import { CSS2DRenderer } from "three/examples/jsm/renderers/CSS2DRenderer";
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent {
-
-  slides = ['red', 'green', 'blue', '#08e8a3'];
-  index = 0;
-
-  images = [
-    './assets/wheels-removebg-preview.png',
-    './assets/bus-removebg-preview.png',
-    './assets/doors-removebg-preview.png',
-    './assets/engine-removebg-preview.png',
-  ]
-
-  models = [
-    './assets/cacodemon/scene.gltf',
-    './assets/arachnotron/scene.gltf',
-    './assets/drone/scene.gltf',
-    './assets/slayer/scene.gltf',
-  ]
+  tabs = ['Салон', 'Двигатель', 'Трансмиссия', 'Колеса'];
+  activeTab = this.tabs.indexOf(this.tabs[0]);
 
   @HostListener('window:keydown', ['$event'])
   onKeydown(event: KeyboardEvent) {
     if (event.key === 'ArrowRight') {
-      this.index = (this.index + 1) % this.slides.length;
+      this.activeTab = (this.activeTab + 1) % this.tabs.length;
     } else if (event.key === 'ArrowLeft') {
-      this.index = (this.index - 1 + this.slides.length) % this.slides.length;
+      this.activeTab = (this.activeTab - 1 + this.tabs.length) % this.tabs.length;
     }
-  }
-
-  selectSlide(index: number) {
-    this.index = index;
   }
 }
