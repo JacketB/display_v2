@@ -82,6 +82,17 @@
         [backgroundColor]="'gray'"
       >
       </ngx-gauge>
+      <ngx-gauge
+        [min]="0"
+        [max]="140"
+        [size]="180"
+        [value]="socketData.bus_speed"
+        [markers]="speedMarkers"
+        [thresholds]="thresholdConfig"
+        [label]="'Давление 3'"
+        [backgroundColor]="'gray'"
+      >
+      </ngx-gauge>
     </div>
 
     <div class="speedometer">

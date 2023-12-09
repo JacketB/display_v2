@@ -1,6 +1,28 @@
 <div class="slider" tabindex="0">
   <div class="slide" [style.background-color]="'black'" [style.left]="(i - index) * 100 + '%'" *ngFor="let color of slides; let i = index">
+    <div>
+      <div>
+        <input type="checkbox" id="check1">
+        <label for="check1">Выбор 1</label>
+      </div>
+      <div>
+        <input type="checkbox" id="check2">
+        <label for="check1">Выбор 2</label>
+      </div>
+      <div>
+        <input type="checkbox" id="check3">
+        <label for="check1">Выбор 3</label>
+      </div>
+      <div>
+        <select>
+          <option>qweqwe</option>
+          <option>afafa</option>
+          <option>xbxcvb</option>
+        </select>
+      </div>
+    </div>
     <app-model canvasId="{{i}}" modelPath="{{models[i]}}"></app-model>
+    <div>ЛЕЖАТЬ</div>
   </div>
 </div>
 <div class="pagination">
